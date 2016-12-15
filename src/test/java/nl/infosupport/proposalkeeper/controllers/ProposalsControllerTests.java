@@ -1,6 +1,5 @@
 package nl.infosupport.proposalkeeper.controllers;
 
-import com.sun.tools.javac.util.List;
 import nl.infosupport.proposalkeeper.forms.ProposalSubmission;
 import nl.infosupport.proposalkeeper.models.Proposal;
 import nl.infosupport.proposalkeeper.services.ProposalMetrics;
@@ -9,6 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -31,8 +33,8 @@ public class ProposalsControllerTests {
 
     @Test
     public void listProposalsReturnsProposalsListView() {
-        List<Proposal> proposals = List.of(
-          new Proposal(1L, 1L, "Test session 1", "Test description"),
+        List<Proposal> proposals = Arrays.asList(
+            new Proposal(1L, 1L, "Test session 1", "Test description"),
             new Proposal(2L, 1L, "Test session 2", "Test description")
         );
 
