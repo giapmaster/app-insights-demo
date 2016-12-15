@@ -1,10 +1,12 @@
 package nl.infosupport.proposalkeeper.services;
 
-import com.sun.tools.javac.util.List;
 import nl.infosupport.proposalkeeper.models.Proposal;
 import nl.infosupport.proposalkeeper.repositories.ProposalRepository;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
@@ -25,7 +27,7 @@ public class ProposalServiceImplTests {
 
     @Test
     public void findAllProposalsReturnsListOfProposals() {
-        List<Proposal> proposals = List.of(
+        List<Proposal> proposals = Arrays.asList(
             new Proposal(1L, 1L, "Test session", "Test description"),
             new Proposal(2L, 1L, "Test session 2", "Test description")
         );
@@ -39,7 +41,7 @@ public class ProposalServiceImplTests {
 
     @Test
     public void findProposalsForUserReturnsListOfProposals() {
-        List<Proposal> proposals = List.of(
+        List<Proposal> proposals = Arrays.asList(
             new Proposal(1L, 1L, "Test session", "Test description"),
             new Proposal(2L, 1L, "Test session 2", "Test description")
         );
